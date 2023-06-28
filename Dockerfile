@@ -1,13 +1,15 @@
-FROM python:3.9 AS base
+FROM python:3.9
 
 RUN mkdir /booking
+
 WORKDIR /booking
+
 COPY requirements.txt .
+
 RUN pip install -r requirements.txt
+
 COPY . .
 
-RUN chmod a+x docker/*.sh
-# RUN pip install gunicorn
-# RUN pip install prometheus_fastapi_instrumentator
+RUN chmod a+x /booking/docker/*.sh
 
-CMD ["gunicorn", "src.main:app", "--workers", "1", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind 0.0.0.0:8000"]
+CMD ["gunicorn", "app.main:app", "--workers", "1", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind=0.0.0.0:8000"]
