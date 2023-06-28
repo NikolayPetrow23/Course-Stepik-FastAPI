@@ -1,0 +1,23 @@
+.search-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  border-radius: 25px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.date-picker {
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.search-button {
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+

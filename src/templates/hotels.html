@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', path='css/hotels.css') }}" type="text/css" xmlns="http://www.w3.org/1999/html"
+            xmlns="http://www.w3.org/1999/html"/>
+{% endblock %}
+
+{% block content %}
+
+    <div class="text-center py-5">
+        <h1>Результат поиска отелей</h1>
+    </div>
+    {% for hotel in hotels %}
+    <div class="container py-3 col-8">
+     <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="{{ url_for( 'static', path='/images/' + hotel.image_id|string + '.jpeg') }}" class="img-fluid rounded-start" style="width: 380px; height: 280px">
+          </div>
+          <div class="col-md-7">
+            <div class="container py-5">
+              <center>
+                <h3 class="card-title">{{ hotel.name }}</h3>
+                <p class="card-text">
+                  {{ hotel.location }}
+                </p>
+                 <p>
+                   Количество оставшихся номеров: {{ hotel.room_available }}
+                 </p>
+                <a href="#">
+                  <button class="btn btn-dark">
+                    <b>Посмотреть все номера</b>
+                  </button>
+                </a>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

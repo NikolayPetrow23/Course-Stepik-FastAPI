@@ -1,0 +1,37 @@
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', path='css/headers.css') }}" type="text/css" xmlns="http://www.w3.org/1999/html"
+        xmlns="http://www.w3.org/1999/html"/>
+{% endblock %}
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #198754;">  <!--bg-dark #2c3034 #06357a-->
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <b>
+          ALTAY bookings.com
+        </b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <b>Мои бронирования</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <b>Аккаунт</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <b>Контакты</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
